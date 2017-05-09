@@ -1,0 +1,66 @@
+# ------------------------------------------------------------------------------
+# COMMON PHP OVERRIDES
+#
+# Sometimes editing your php.ini file is impossible or even just annoying.
+# Here are some of the most common settings that can (sometimes) be overridden.
+# ------------------------------------------------------------------------------
+
+# php_value memory_limit 256M
+# php_value post_max_size 16M
+# php_value max_execution_time 90
+# php_value max_input_time 120
+# php_value upload_max_filesize 16M
+
+# ------------------------------------------------------------------------------
+# BASE APACHE RULES
+#
+# When running in a subdirectory, you should uncomment and adjust the
+# RewriteBase rule to point to your directory, eg. RewriteBase /directory/
+# ------------------------------------------------------------------------------
+
+Options -MultiViews
+RewriteEngine On
+# RewriteBase /
+
+
+# ------------------------------------------------------------------------------
+# REMOVE TRAILING SLASHES
+# ------------------------------------------------------------------------------
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+
+# ------------------------------------------------------------------------------
+# STATIC CACHING PROXY
+#
+# Enable these rules when using static html caching
+# to bypass Statamic when a given URL has a cached copy.
+# ------------------------------------------------------------------------------
+
+# RewriteCond %{REQUEST_FILENAME}   !-f
+# RewriteCond %{REQUEST_METHOD} GET
+# RewriteRule ^(.*) static/$1/index.html
+
+
+# ------------------------------------------------------------------------------
+# PROTECT SYSTEM FILES AND DIRECTORIES
+#
+# Not necessary when running above webroot.
+# ------------------------------------------------------------------------------
+
+RewriteRule ^site/(?!themes) - [F,L]
+RewriteRule ^local - [F,L]
+RewriteRule ^statamic - [F,L]
+
+# Block access to hidden files and directories, with the exception of /.well-known
+RedirectMatch 404 /(?!.well-known)(\.)\w+
+
+
+# ------------------------------------------------------------------------------
+# ROUTE THROUGH INDEX.PHP
+# ------------------------------------------------------------------------------
+
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^ index.php [L]

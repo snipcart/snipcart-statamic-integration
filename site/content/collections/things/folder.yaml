@@ -1,0 +1,6 @@
+title: Things
+fieldset: things
+columns:
+  - title
+  - amazon_id
+  - slug

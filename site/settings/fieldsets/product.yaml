@@ -1,0 +1,23 @@
+title: Product
+hide: true
+fields:
+  title:
+    type: title
+    display: Name
+  description:
+    title: description
+    display: Description
+    type: textarea
+  price:
+    type: text
+    display: Price
+    validate: numeric
+  image:
+    type: assets
+    display: Image
+    container: main
+    folder: img
+    max_files: 1
+  content:
+    type: markdown
+    display: Content

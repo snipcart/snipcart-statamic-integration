@@ -1,0 +1,6 @@
+title: Products
+fieldset: product
+template: products/details
+columns:
+  - title
+  - price

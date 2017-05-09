@@ -1,0 +1,13 @@
+title: Things
+create_title: Add New Thing
+hide: true
+fields:
+  title:
+    type: title
+    display: Title
+  amazon_id:
+    display: Amazon Product ID
+    type: text
+  photo:
+    display: Image URL
+    type: text

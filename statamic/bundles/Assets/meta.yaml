@@ -1,0 +1,9 @@
+fieldtype_fields:
+  container:
+    type: asset_container
+  folder:
+    type: asset_folder
+  restrict:
+    type: toggle
+  max_files:
+    type: integer

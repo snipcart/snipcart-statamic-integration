@@ -1,0 +1,18 @@
+<section class="container-fluid regular">
+
+    <header>
+        <h1>{{ title }}</h1>
+        {{ content_raw wrap="h2" }}
+    </header>
+
+    <div class="tiles">
+        {{ collection:products }}
+        <a href="{{ url }}" class="item">
+            <div class="image" style="background-image: url('{{ image }}');">
+                <h3 class="caption">{{ title }}</h3>
+            </div>
+        </a>
+        {{ /collection:products }}
+    </div>
+
+</section>

@@ -1,0 +1,7 @@
+title: Snipcart
+hide: true
+fields:
+  snipcart_api_key:
+    type: text
+    display: Snipcart public API Key
+    instructions: "Please open [Snipcart's dashboard](https://app.snipcart.com/dashboard/account/credentials) and enter your **public** API key."

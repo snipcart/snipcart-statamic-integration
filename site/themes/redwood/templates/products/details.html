@@ -1,0 +1,32 @@
+<section class="regular">
+
+    <header>
+        <h1>{{ title }}</h1>
+        {{ description wrap="h2" }}
+    </header>
+
+    <article class="content">
+
+        {{ if image }}
+            <img style="width: 200px; margin: 20px;" src="{{ image }}" class="intro-image" align="left">
+        {{ /if }}
+
+        <div>
+            <div>
+                Price: <strong> {{ price | round:2}} $</strong>
+            </div>
+            <div>
+                <button class="snipcart-add-item btn btn-primary"
+                data-item-name="{{ title }}"
+                data-item-price="{{ price }}"
+                data-item-description="{{ description }}"
+                data-item-url="{{ url }}"
+                data-item-image="{{ image }}"
+                data-item-id="{{ id }}">Buy now</button>
+            </div>
+            <div>
+                {{ content }}
+            </div>
+        </div>
+    </article>
+</section>

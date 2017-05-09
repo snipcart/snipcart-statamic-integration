@@ -1,0 +1,24 @@
+<div class="block">
+	<a href="{{ url }}">
+
+		{{ if intro_image }}
+			<img src="{{ glide:intro_image width='140' height='140' fit='crop' }}" width="140" height="140" class="small-image">
+		{{ elseif hero_image }}
+			<img src="{{ glide:hero_image width='140' height='140' fit='crop' }}" width="140" height="140" class="small-image">
+		{{ /if }}
+
+		<h3>{{ title }}</h3>
+
+		<p>{{ content strip_tags="img|a|p" safe_truncate="210" ensure_right="..." }}</p>
+
+		<div class="meta">
+			{{ if (date | days_ago) < 21 }}
+				{{ date | relative }}
+			{{ elseif (date | format:Y) == now | format:Y }}
+				{{ date format="M j" }}
+			{{ else }}
+				{{ date format="M j, Y" }}
+			{{ /if }}
+		</div>
+	</a>
+</div>
