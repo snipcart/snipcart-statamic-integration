@@ -1,0 +1,7 @@
+{
+    "name": "Snipcart statamic demo",
+    "description": "Demo of a Statamic website with Snipcart.",
+    "require": {
+       "ext-mbstring": "*"
+    }
+}
