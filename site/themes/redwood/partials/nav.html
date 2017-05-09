@@ -20,19 +20,11 @@
                     </li>
                 {{ /nav }}
             </ul>
-            <form class="navbar-form navbar-right" role="search" action="{{ link to='search' }}">
-                <div class="form-group">
-                    <input type="text" class="form-control search" name="q" placeholder="Search">
-                </div>
-            </form>
+       
             <ul class="nav navbar-nav navbar-right">
-                {{ if logged_in }}
-                    <li><a href="{{ link to='users' }}">Users</a></li>
-                    <li><a href="{{ user:logout_url }}">Log out</a></li>
-                {{ else }}
-                    <li><a href="{{ link to='login' }}">Log in</a></li>
-                    <li><a href="{{ link to='register' }}">Register</a></li>
-                {{ /if }}
+                <li class="snipcart-summary">
+                    <a href="#" class="snipcart-checkout">View cart (<span class="snipcart-total-items">0</span>)</a>
+                </li>
             </ul>
         </div>
 
